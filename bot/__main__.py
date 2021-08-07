@@ -43,24 +43,25 @@ def stats(update, context):
     mem_u = get_readable_file_size(memory.used)
     stats = f'<b>╭─────────「  ⭕️ 𝕭𝕺𝕿 𝕾𝕿𝕬𝕿𝕴𝕾𝕿𝕴𝕮𝕾 ⭕️  」</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
-            f'<b>├  💾 Total Disk Space : {total}</b>\n' \
-            f'<b>├  📀 Total Used Space : {used}</b>\n' \
-            f'<b>├  💿 Total Free Space : {free}</b>\n' \
-            f'<b>├  🔼 Total Upload : {sent}</b>\n' \
-            f'<b>├  🔽 Total Download : {recv}</b>\n' \
-            f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
-            f'<b>├  🎮 RAM : {memory}%</b>\n' \
-            f'<b>├  💽 DISK : {disk}%</b>\n' \
+            f'<b>├  Bot Uptime : {currentTime}</b>\n' \
+            f'<b>├ Total Disk Space : {total}</b>\n' \
+            f'<b>├ Total Used Space : {used}</b>\n' \
+            f'<b>├ Total Free Space : {free}</b>\n' \
+            f'<b>├ Total Upload : {sent}</b>\n' \
+            f'<b>├ Total Download : {recv}</b>\n' \
+            f'<b>├ CPU : {cpuUsage}%</b>\n' \
+            f'<b>├ RAM : {memory}%</b>\n' \
+            f'<b>├ DISK : {disk}%</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──「 🚸 𝕯𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖉 𝕱𝖔𝖗 𝕾𝖙𝖊𝖆𝖒𝖀𝖓𝖑𝖔𝖈𝖐𝖊𝖉 🚸 」</b>'
+            f'<b>╰──「」</b>'
+
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
     sendMessage(stats, context.bot, update)
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/RedisCool81")
-    buttons.buildbutton("Channel", "https://t.me/steam_unlocked_games")
+    buttons.buildbutton("Repo", "https://telegra.ph/file/ae590af05c3a1ec160b95.jpg")
+    buttons.buildbutton("Owner", "https://t.me/arnavpuranik")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -70,7 +71,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'Oops! not a Authorized user.\nPlease deploy your own <b>𝕾𝖙𝖊𝖆𝖒𝖚𝖓𝖑𝖔𝖈𝖐𝖊𝖉</b>.',
+            'Oops! not a Authorized user.\nPlease contact my Owner!.',
             context.bot,
             update,
             reply_markup,
@@ -169,8 +170,8 @@ help_string_telegraph = f'''<br>
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='𝕾𝖙𝖊𝖆𝖒𝖚𝖓𝖑𝖔𝖈𝖐𝖊𝖉 𝕾𝖊𝖆𝖗𝖈𝖍',
-        author_name='𝕾𝖙𝖊𝖆𝖒𝖚𝖓𝖑𝖔𝖈𝖐𝖊𝖉',
-        author_url='https://github.com/RedisCool81/test',
+        author_name='Arnav',
+        author_url='https://github.com/arnavpuranik',
         html_content=help_string_telegraph,
     )["path"]
 
@@ -253,7 +254,7 @@ def main():
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = "<b>𝕭𝖔𝖙 𝕽𝖊𝖘𝖙𝖆𝖗𝖙𝖊𝖉 𝖘𝖚𝖈𝖈𝖊𝖘𝖘𝖋𝖚𝖑𝖞 𝕹𝖔𝖜 𝖚 𝖈𝖆𝖓 𝕸𝖎𝖗𝖗𝖔𝖗!!</b>"
+            text = "<b>The Mirrorbot has restarted successfully!</b>"
             bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTHORIZED_CHATS:
                 for i in AUTHORIZED_CHATS:

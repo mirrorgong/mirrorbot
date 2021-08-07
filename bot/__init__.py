@@ -428,9 +428,9 @@ if os.path.exists('drive_folder'):
 try:
     IMAGE_URL = getConfig('IMAGE_URL')
     if len(IMAGE_URL) == 0:
-        IMAGE_URL = 'https://telegra.ph/file/dc3473634c63051496302.jpg'
+        IMAGE_URL = 'https://telegra.ph/file/52a76a20702cb6e4c832a.jpg'
 except KeyError:
-    IMAGE_URL = 'https://telegra.ph/file/dc3473634c63051496302.jpg'                   
+    IMAGE_URL = 'https://telegra.ph/file/52a76a20702cb6e4c832a.jpg'                   
 
 updater = tg.Updater(token=BOT_TOKEN)
 bot = updater.bot
