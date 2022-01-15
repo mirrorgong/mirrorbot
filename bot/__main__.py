@@ -206,8 +206,8 @@ def bot_help(update, context):
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
     sendMarkup(help_string, context.bot, update, reply_markup)
 
-'''
 botcmds = [
+    
         (f'{BotCommands.HelpCommand}','Get Detailed Help'),
         (f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
         (f'{BotCommands.TarMirrorCommand}','Start mirroring and upload as .tar'),
@@ -233,17 +233,17 @@ botcmds = [
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
         (f'{BotCommands.TsHelpCommand}','Get help for Torrent search module')
     ]
-'''
 
 def main():
+    # bot.set_my_commands(botcmds)
     fs_utils.start_cleanup()
     if IS_VPS:
-        asyncio.get_event_loop().run_until_complete(start_server_async(PORT))
+        asyncio.new_event_loop().run_until_complete(start_server_async(PORT))
     # Check if the bot is restarting
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Bot Restarted!!", chat_id, msg_id)
+        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
@@ -254,7 +254,7 @@ def main():
                     bot.sendMessage(chat_id=i, text=text, parse_mode=ParseMode.HTML)
         except Exception as e:
             LOGGER.warning(e)
-    bot.set_my_commands(botcmds)
+    bot.set_my_commands(botcmds)  
     
     start_handler = CommandHandler(BotCommands.StartCommand, start, run_async=True)
     ping_handler = CommandHandler(BotCommands.PingCommand, ping,
