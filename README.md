@@ -1,7 +1,7 @@
 ```diff 
-- [ DEAD REPO AND NO MORE UPDATE ]
+- [ 𝕾𝖙𝖊𝖆𝖒𝖚𝖓𝖑𝖔𝖈𝖐𝖊𝖉 ]
 ```
-[![SlamDevs](https://telegra.ph/file/143032e96542e7534f073.jpg)](https://t.me/SlamDevs)
+[![𝕾𝖙𝖊𝖆𝖒𝖚𝖓𝖑𝖔𝖈𝖐𝖊𝖉](https://telegra.ph/file/dc3473634c63051496302.jpg)](https://t.me/steam_unlocked_games)
 
 # Slam Mirror Bot
 ![GitHub Repo stars](https://img.shields.io/github/stars/breakdowns/slam-mirrorbot?color=blue&style=flat)
